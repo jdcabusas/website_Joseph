@@ -1,11 +1,30 @@
 // src/App.js
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router
 import { Container, Box, Typography, Grid, Button } from '@mui/material';
+import YoutubeSearch from './YoutubeSearch'; // Import your YoutubeSearch component
+import Career from './Career'; // Import your Career component
+import Resume from './Resume'; // Import your Career component
 import Navbar from './Navbar'; // Import the Navbar component
 import headshot from './Joseph_image.jpg'; // Importing the image directly
 import cpeImage from './cpe.jpg'; // Import your image for the content section
 import ytImage from './youtube.jpg'; // Import your image for the content section
 import aboutImage from './about.jpg'; // Import your image for the content section
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/youtube" element={<YoutubeSearch />} /> {/* Add this route */}
+        <Route path="/career" element={<Career />} /> {/* Add this route */}
+        <Route path="/resume" element={<Resume />} /> {/* Add this route */}
+      </Routes>
+    </Router>
+  </React.StrictMode>
+);
 
 function App() {
   return (
