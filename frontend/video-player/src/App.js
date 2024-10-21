@@ -63,7 +63,7 @@ function App() {
           }}
         />
         <Typography variant="h2" sx={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '5px', zIndex: 2, fontFamily: 'Roboto, sans-serif' }}>
-          We Have a Moral Obligation To Be OPTIMISTIC
+          We Have a Moral Obligation To Be Optimistic
         </Typography>
         <Box sx={{ zIndex: 2 }}>
           <Typography variant="body1" sx={{ marginTop: '5px', fontSize: '0.9rem', fontFamily: 'Roboto, sans-serif' }}>
