@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.hero {
+  height: 40vh; /* Keeping the height for the hero section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px; /* Adjusted padding for better spacing */
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif; /* Updated to use Poppins */
+}
+
+.hero-headshot {
+  border-radius: 10%; /* Circular headshot */
+  width: 150px; /* Reduced size for better fit */
+  height: 175px; /* Adjusted height to maintain aspect ratio */
+  margin-bottom: 10px; /* Space between image and text */
+  position: relative; /* Keep image above the background color */
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 2rem; /* Larger font size for the title */
+  font-weight: bold;
+  margin-bottom: 5px;
+  z-index: 2;
+}
+
+.hero-contact {
+  z-index: 2;
+  font-size: 0.9rem; /* Adjusted font size */
+}
+
+.hero-contact a {
+  color: #fff; /* Keeping link color white for consistency */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.hero-contact a:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
