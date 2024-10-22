@@ -167,7 +167,7 @@ function Landing() {
 </Typography>
 
         <Box display="flex" justifyContent="center" mb={4}>
-          <Button variant="contained" color="primary" href="https://github.com/jdcabusas/YoutubeAPI_LandingPage" target="_blank">
+          <Button variant="contained" color="primary" href="https://github.com/jdcabusas/YoutubeAPI_LandingPage/tree/master" target="_blank">
             Source Code
           </Button>
         </Box>
@@ -457,7 +457,7 @@ function Landing() {
       </Box>
 
       {/* About Section */}
-      <Box ref={aboutRef} sx={{ padding: '100px 0', backgroundColor: '#f0f0f0' }}>
+      {/*<Box ref={aboutRef} sx={{ padding: '100px 0', backgroundColor: '#f0f0f0' }}>
         <Container>
           <Typography variant="h4" align="center" gutterBottom>
             About
@@ -466,7 +466,7 @@ function Landing() {
             This project showcases the integration of various APIs for practical use cases.
           </Typography>
         </Container>
-      </Box>
+      </Box>*/}
     </div>
   );
 }

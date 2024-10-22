@@ -58,9 +58,11 @@ function Navbar({ youtubeApiRef }) {
               <MenuItem onClick={handleMenuClose}>Source Code</MenuItem>
             </Menu>
           )}
+          {/*
           <Button color="inherit" onClick={(event) => handleMenuOpen(event, 'about')}>
             About Me
           </Button>
+           */}
           {selectedButton === 'about' && (
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
               <MenuItem onClick={handleMenuClose}>About</MenuItem>
