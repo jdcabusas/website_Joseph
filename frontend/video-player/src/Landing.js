@@ -116,30 +116,55 @@ function Landing() {
       <Navbar scrollToSection={scrollToSection} computerEngRef={computerEngRef} youtubeApiRef={youtubeApiRef} aboutRef={aboutRef} />
 
       {/* Computer Engineering Section */}
-    <Box ref={computerEngRef} sx={{ padding: '100px 0', backgroundColor: '#eceff1' }}>
-      <Container>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box display="flex" justifyContent="center" alignItems="center">
-              <img src={JosephImg} alt="Joseph Cabusas" style={{ width: '80%', maxWidth: '300px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)' }} />
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px' }}>
-              <Typography variant="h3" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold', color: '#263238' }} gutterBottom>
-                Joseph Cabusas
-              </Typography>
-              <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a', fontSize: '1.5rem', marginBottom: '20px' }}>
-                Software Engineer
-              </Typography>
-              <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', lineHeight: '1.6', fontSize: '1rem', marginTop: '20px' }}>
-                I am a passionate software engineer with experience working in various industries, including defense and transportation. I thrive on building efficient software solutions and solving complex technical challenges.
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+<Box ref={computerEngRef} sx={{ padding: '100px 0', backgroundColor: '#eceff1' }}>
+  <Container>
+    <Grid container spacing={4} alignItems="center">
+      <Grid item xs={12} md={6}>
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <img src={JosephImg} alt="Joseph Cabusas" style={{ width: '80%', maxWidth: '300px', borderRadius: '10px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)' }} />
+        </Box>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px' }}>
+          <Typography variant="h3" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold', color: '#263238' }} gutterBottom>
+            Joseph Cabusas
+          </Typography>
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a', fontSize: '1.5rem', marginBottom: '20px' }}>
+            Software Engineer
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', lineHeight: '1.6', fontSize: '0.8rem', marginTop: '20px' }}>
+            Joseph is a highly skilled Lead Software Engineer with deep expertise in software design, DevOps, and guiding teams to successfully deliver complex projects across the Defense and Commercial sectors. He has made significant contributions to software development teams at leading global companies, including Lockheed Martin, Kapsch TrafficCom, and ASRC Federal.
+          </Typography>
+
+          {/* Contact Details Section */}
+<Box sx={{ marginTop: '10px' }}>
+  <Typography variant="h4" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', fontWeight: 'bold' }}>
+    Contact
+  </Typography>
+</Box>
+<Box display="flex" alignItems="center" mt={1}>
+  <img src={require('./linkedin.png')} alt="LinkedIn" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', fontSize: '0.8rem' }}>
+    <a href="https://www.linkedin.com/in/josephcabusas/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#37474f' }}>
+      Joseph Cabusas
+    </a>
+  </Typography>
+</Box>
+<Box display="flex" alignItems="center" mt={1}>
+  <img src={require('./gmail.png')} alt="Gmail" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
+  <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', fontSize: '0.8rem' }}>
+    <a href="mailto:jdcabusas201@gmail.com" style={{ textDecoration: 'none', color: '#37474f' }}>
+      jdcabusas201@gmail.com
+    </a>
+  </Typography>
+</Box>
+
+        </Paper>
+      </Grid>
+    </Grid>
+  </Container>
+</Box>
+
 
       {/* YouTube API and other APIs Section with horizontal scrolling */}
       <Box ref={youtubeApiRef} sx={{ padding: '100px 0', backgroundColor: '#e0e0e0' }}>
