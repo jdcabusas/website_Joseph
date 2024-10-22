@@ -1,9 +1,8 @@
-// src/Navbar.js
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ youtubeApiRef }) {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedButton, setSelectedButton] = useState(null);
@@ -23,9 +22,15 @@ function Navbar() {
     navigate(path); // Use navigate to change routes
   };
 
-  // Add a function to navigate to the home page
   const handleGoHome = () => {
     navigate('/'); // Navigate to the root route (App.js)
+  };
+
+  const scrollToYoutubeApiSection = () => {
+    if (youtubeApiRef && youtubeApiRef.current) {
+      youtubeApiRef.current.scrollIntoView({ behavior: 'smooth' });
+      handleMenuClose();
+    }
   };
 
   return (
@@ -40,21 +45,19 @@ function Navbar() {
           </Button>
           {selectedButton === 'computer' && (
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-              <MenuItem onClick={() => handleNavigate('/career')}>Career Outline</MenuItem> {/* Updated to navigate */}
+              <MenuItem onClick={() => handleNavigate('/career')}>Career Outline</MenuItem>
               <MenuItem onClick={() => handleNavigate('/resume')}>Resume</MenuItem>
             </Menu>
           )}
-
-          <Button color="inherit" onClick={(event) => handleMenuOpen(event, 'youtube')}>
-            Youtube API
+          <Button color="inherit" onClick={scrollToYoutubeApiSection}>
+            Services API
           </Button>
           {selectedButton === 'youtube' && (
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-              <MenuItem onClick={() => handleNavigate('/youtube')}>Youtube API Overview</MenuItem>
+              <MenuItem onClick={() => handleNavigate('/youtube')}>Services API</MenuItem>
               <MenuItem onClick={handleMenuClose}>Source Code</MenuItem>
             </Menu>
           )}
-
           <Button color="inherit" onClick={(event) => handleMenuOpen(event, 'about')}>
             About Me
           </Button>
