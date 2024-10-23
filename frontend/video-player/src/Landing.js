@@ -133,7 +133,7 @@ function Landing() {
             Software Engineer
           </Typography>
           <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', lineHeight: '1.6', fontSize: '0.8rem', marginTop: '20px' }}>
-            Joseph is a highly skilled Lead Software Engineer with deep expertise in software design, DevOps, and guiding teams to successfully deliver complex projects across the Defense and Commercial sectors. He has made significant contributions to software development teams at leading global companies, including Lockheed Martin, Kapsch TrafficCom, and ASRC Federal.
+            Joseph is a highly skilled Software Engineer with expertise in software design, DevOps, and guiding teams to successfully deliver complex projects across the Defense and Commercial sectors. He has made significant contributions to software development teams at leading global companies, including Lockheed Martin, Kapsch TrafficCom, and ASRC Federal.
           </Typography>
 
           {/* Contact Details Section */}
