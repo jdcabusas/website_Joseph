@@ -29,8 +29,15 @@ function Navbar({ youtubeApiRef }) {
   const scrollToYoutubeApiSection = () => {
     if (youtubeApiRef && youtubeApiRef.current) {
       youtubeApiRef.current.scrollIntoView({ behavior: 'smooth' });
-      handleMenuClose();
     }
+  };
+
+  const handleServicesApiClick = () => {
+    handleGoHome(); // Navigate to home
+    // Use a timeout to ensure the navigation happens before scrolling
+    setTimeout(() => {
+      scrollToYoutubeApiSection();
+    }, 100); // Adjust the timeout duration if necessary
   };
 
   return (
@@ -49,7 +56,7 @@ function Navbar({ youtubeApiRef }) {
               <MenuItem onClick={() => handleNavigate('/resume')}>Resume</MenuItem>
             </Menu>
           )}
-          <Button color="inherit" onClick={scrollToYoutubeApiSection}>
+          <Button color="inherit" onClick={handleServicesApiClick}>
             Services API
           </Button>
           {selectedButton === 'youtube' && (
@@ -58,11 +65,6 @@ function Navbar({ youtubeApiRef }) {
               <MenuItem onClick={handleMenuClose}>Source Code</MenuItem>
             </Menu>
           )}
-          {/*
-          <Button color="inherit" onClick={(event) => handleMenuOpen(event, 'about')}>
-            About Me
-          </Button>
-           */}
           {selectedButton === 'about' && (
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
               <MenuItem onClick={handleMenuClose}>About</MenuItem>

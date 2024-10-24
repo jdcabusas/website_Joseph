@@ -1,6 +1,5 @@
 // src/Resume.js
-import React from 'react';
-import { Container, Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, Button } from '@mui/material';
 import Navbar from './Navbar'; // Import the Navbar component
 
 const Resume = () => {
@@ -9,168 +8,14 @@ const Resume = () => {
       {/* Include the Navbar here */}
       <Navbar />
 
-      {/* Hero Section */}
-      <Box
-        sx={{
-          height: '20vh',
-          backgroundColor: '#1E1E2F',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#fff',
-          textAlign: 'center',
-          flexDirection: 'column',
-          position: 'relative',
-          padding: '10px',
-          borderRadius: '1px',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-        }}
-      >
-        <Typography variant="h2" sx={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '5px', zIndex: 2, fontFamily: 'Roboto, sans-serif' }}>
-          Resume of Joseph Cabusas
-        </Typography>
-      </Box>
+      {/* Resume Section */}
+      <Box sx={{ padding: '50px 0', backgroundColor: '#eceff1' }}>
+        <Container>
+          <Typography variant="h2" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold', color: '#263238', textAlign: 'center', marginBottom: '40px' }}>
+            Joseph Cabusas
+          </Typography>
 
-      {/* Page Content */}
-      <Container sx={{ backgroundColor: '#f5f5f5', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', marginTop: '20px' }}>
-        <Typography variant="h3" align="center" sx={{ marginBottom: '20px' }}>
-          Summary
-        </Typography>
-        <Typography variant="body2" align="justify" sx={{ marginBottom: '20px' }}>
-          Lead Software Engineer with over 4 years of experience in software development, specializing in system and software design. Proven expertise in leading and implementing software integrations with other systems over message brokers, HTTP/TCP/UDP, and specific port configurations. Skilled in deployment and DevOps practices, including Docker, Kubernetes clusters, and CI/CD pipelines in GitLab. Experienced in coordinating multi-million dollar technological initiatives with cross-functional stakeholders. Adept at leading project teams of 4-10 engineers, ensuring the successful execution of complex enterprise applications and technological events.
-        </Typography>
-
-        <Typography variant="h3" align="center" sx={{ marginBottom: '20px' }}>
-          Skills
-        </Typography>
-        <ul style={{ listStyleType: 'none', padding: 0, marginBottom: '20px' }}>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Strong Programming Skills in Python and C++</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Software Development Life Cycle (SDLC)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Agile Methodologies (Scrum)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Team Collaboration</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- DevOps (CI/CD)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Microservices Architecture</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Version Control (Git)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Object-Oriented Programming (OOP)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Data Infrastructure as Code (IaC)</Typography>
-          </li>
-          <li style={{ marginBottom: '10px' }}>
-            <Typography variant="body2">- Data Analysis and Decision-making</Typography>
-          </li>
-        </ul>
-
-        <Typography variant="h3" align="center" sx={{ marginBottom: '20px' }}>
-          Work Experience
-        </Typography>
-
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Technical Lead
-        </Typography>
-        <Typography variant="body2">
-          Lockheed Martin
-          <br />
-          March 2022 - Present
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Software Engineer and Technical Lead of multiple teams of Software Engineers focusing on the quick-turn R&D software development of Prototype and Demonstrations for software internally developed to support military exercises across the USA.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Programming Languages and Tech Used:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Python, C++, C#, Java, Docker, Development in Linux Environment, VSCode as main text editor, GitLab for version control, AWS Cloud tools.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Responsibilities:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Leading R&D projects aimed at modernizing and creating critical military combat systems, restructuring complex legacy systems into scalable microservices, and ensuring high-quality deliverables through comprehensive testing and stakeholder communication.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Biggest Accomplishment:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '20px' }}>
-          Successfully led the software efforts to support an Army military exercise event, significantly increasing our organization's R&D budget from $2 million to $6 million over the year.
-        </Typography>
-
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Real Time Software Engineer
-        </Typography>
-        <Typography variant="body2">
-          Kapsch TrafficCom North America
-          <br />
-          July 2021 - March 2022
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Specialized in software deployment, hardware network configuration, and automating large-scale deployments in the Tolling Industry, supporting cities across the United States.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Programming Languages and Tech Used:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          C++, Ansible, Docker, Development in Linux Environment, VIM, GitLab for version control.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Responsibilities:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Led automation of large deployments, managed software deployments on national highways, and developed and executed tests to ensure high-quality software.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Biggest Accomplishment:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '20px' }}>
-          Successfully integrated our software and settings onto new hardware for a San Diego customer, solving a high-priority issue through extensive testing.
-        </Typography>
-
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          Software Engineer
-        </Typography>
-        <Typography variant="body2">
-          ASRC Federal
-          <br />
-          June 2020 - July 2021
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Focused on the software maintenance and development of the AEGIS weapon system for Australian and Korean deployments.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Programming Languages and Tech Used:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          C++, IBM ClearCase, Development in Linux Environment, VIM.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Main Responsibilities:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px' }}>
-          Engineered software development and integration for the AEGIS Weapon System, collaborating with System Engineering for lab-based testing.
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '10px', fontWeight: 'bold' }}>
-          Biggest Accomplishment:
-        </Typography>
-        <Typography variant="body2" sx={{ marginBottom: '20px' }}>
-          Became highest performing software engineer on my team within one year of joining measured by completing most number of CPCRs (Similar to software tickets) compared to teammates supporting Australian and Korean customers.
-        </Typography>
-
-        {/* Download Resume Button */}
+	{/* Download Resume Button */}
         <Box display="flex" justifyContent="center" mt={4}>
           <Button
             variant="contained"
@@ -182,7 +27,209 @@ const Resume = () => {
             Download Resume
           </Button>
         </Box>
-      </Container>
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginBottom: '20px' }}>
+            Summary
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', lineHeight: '1.6', marginBottom: '40px' }}>
+            Lead Software Engineer with over four years of experience in software development, specializing in system and software design. Proven expertise in leading and implementing software integrations with other systems over message brokers, network protocols (HTTP/TCP/UDP), and specific port configurations. Skilled in deployment and DevOps practices, including Docker, Kubernetes clusters, and CI/CD pipelines in GitLab. Experienced in coordinating multi-million dollar technological initiatives with cross-functional stakeholders. Adept at leading project teams of 4-10 engineers, ensuring the successful execution of complex enterprise applications and technological events.
+          </Typography>
+
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginBottom: '20px' }}>
+            Skills
+          </Typography>
+          <Grid container spacing={2}>
+            {[
+              "Strong Programming Skills in Python, C++ and infrastructure as code (IaC)",
+              "Software Development Life Cycle (SDLC)",
+              "Agile Methodologies (Scrum)",
+              "Mentorship",
+              "DevOps (CI/CD)",
+              "Microservices Architecture",
+              "Version Control (Git)",
+              "Object-Oriented Programming (OOP)",
+              "Client and Team Communication",
+              "Data Analysis and Decision-making"
+            ].map((skill, index) => (
+              <Grid item xs={12} sm={6} key={index}>
+                <Paper elevation={2} sx={{ padding: '10px', backgroundColor: '#fff' }}>
+                  <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                    {skill}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginBottom: '20px', marginTop: '40px' }}>
+            Work Experience
+          </Typography>
+
+          {/* Work Experience Section */}
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+                <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+                  Software Engineer/Technical Lead
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+                  Lockheed Martin
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>March 2022 - Present</strong>
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  Software Engineer and Technical Lead of multiple teams, driving rapid R&D efforts to develop advanced software solutions, proof-of-concept prototypes, and demonstrations in support of military exercises across the USA.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>Main Programming Languages and Tech Used:</strong> Python, C++, C#, Java, Docker, Development in Linux Environment, VSCode, GitLab, AWS Cloud tools.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Main Responsibilities:</strong> Currently leading R&D projects aimed at modernizing and creating critical military combat systems, utilizing Docker, Python, and GitLab for efficient development and DevOps in a Linux environment. Restructure complex legacy systems into scalable microservices, manage the full lifecycle of projects from requirements to product demonstrations, and ensure high-quality deliverables through comprehensive testing and stakeholder communication. Additionally, mentor junior team members to help them develop their technical skills and grow professionally.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Biggest Accomplishment:</strong> Successfully led the software development efforts for an Army military exercise event, resulting in a significant increase in our organization's R&D budget from $2 million to $6 million within a year.
+                </Typography>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+                <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+                  Real Time Software Engineer
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+                  Kapsch TrafficCom North America
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>July 2021 - March 2022</strong>
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  Software Engineer at Kapsch TrafficCom NA, specializing in software deployment, hardware network configuration, and automating large-scale deployments in the Tolling Industry.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>Main Programming Languages and Tech Used:</strong> C++, Ansible, Docker, Development in Linux Environment, VIM, GitLab.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Main Responsibilities:</strong> Led automation of large deployments using Docker, Python, and Ansible, improving software delivery. Managed software deployments on national highways, enhancing traffic and operational efficiency.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Biggest Accomplishment:</strong> Successfully integrated our software and settings onto new hardware for a San Diego customer, solving a high-priority issue through extensive testing.
+                </Typography>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+                <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+                  Software Engineer
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+                  ASRC Federal
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>June 2020 - July 2021</strong>
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  Software Developer focusing on the software maintenance and development of AEGIS weapon system for Australian and Korean deployments.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+                  <strong>Main Programming Languages and Tech Used:</strong> C++, IBM ClearCase, Development in Linux Environment, VIM.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Main Responsibilities:</strong> Engineered software development and integration for the AEGIS Weapon System, closely collaborated with System Engineering for lab-based testing.
+                </Typography>
+                <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+                  <strong>Biggest Accomplishment:</strong> Became the highest performing software engineer on my team within one year of joining.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
+
+          {/* Education Section */}
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginBottom: '20px', marginTop: '40px' }}>
+            Education
+          </Typography>
+          <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+            <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+              B.S. in Computer Engineering
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+              University of San Carlos
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+              October 2012 - April 2018, Cebu City, Philippines
+            </Typography>
+          </Paper>
+
+          {/* Other Work Experience & Additional Information Section */}
+          <Typography variant="h5" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginBottom: '20px', marginTop: '40px' }}>
+            Other Work Experience & Additional Information
+          </Typography>
+          <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+            <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+              Cabs Equities Automated Trading
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+              Solo Project
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Suite of algorithmic trading systems for Forex and Options markets, leveraging advanced algorithms and cutting-edge technology for execution with precision.
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Real-time market analysis, intelligent decision-making, and optimized trading strategies.
+            </Typography>
+          </Paper>
+
+          <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+            <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+              Spanish Customer Service Rep
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+              Ocean Home Health
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+              May 2018 - Feb 2020
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Managed intake of 80 - 100 calls daily addressing patient concerns, resolving problems, and effectively coordinating delivery of medical equipment. Guided and instructed patients on the operation and maintenance of oxygen equipment and CPAP use.
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Provided comprehensive guidance to patients on completion of medical documentation needed to provide medical equipment.
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Handled all Spanish patient concerns.
+            </Typography>
+          </Paper>
+
+          <Paper elevation={3} sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+            <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}>
+              Crew Member
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+              McDonald's
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+              June 2010 - July 2012
+            </Typography>
+            <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f', marginTop: '10px' }}>
+              Roles include: Drive-through, Food Runner, and Cashier.
+            </Typography>
+          </Paper>
+
+          {/* Additional Information Section */}
+          <Paper elevation={3} sx={{ padding: '1px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '20px' }}>
+          <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginTop: '10px' }}>
+            <strong>Additional Information</strong>
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+            - Active SECRET Clearance
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Roboto, sans-serif', color: '#37474f' }}>
+            - Fluent in Spanish
+          </Typography>
+          </Paper>
+        </Container>
+      </Box>
     </div>
   );
 };
