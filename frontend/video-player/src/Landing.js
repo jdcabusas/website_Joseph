@@ -248,11 +248,15 @@ return (
       <Box display="flex" justifyContent="center" mb={2}>
          <TextField
             variant="outlined"
-            label="Search YouTube"
-            value={query}
-            onChange={(e) =>
-         setQuery(e.target.value)}
-         sx={{ marginRight: '10px' }}
+    label="Search YouTube"
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter') {
+        handleSearch(); // Call handleSearch when Enter is pressed
+      }
+    }}
+    sx={{ marginRight: '10px' }}
          />
          <Button variant="contained" color="primary" onClick={handleSearch}>
          Search
