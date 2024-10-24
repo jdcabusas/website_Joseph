@@ -12,13 +12,13 @@ const computerEngRef = useRef(null);
 const youtubeApiRef = useRef(null);
 const aboutRef = useRef(null);
 const [query, setQuery] = useState('');
-const [selectedVideoId, setSelectedVideoId] = useState(null);
 const [error, setError] = useState(null);
 const [randomCountry, setRandomCountry] = useState(null);
 const [loadingCountry, setLoadingCountry] = useState(true);
 const YOUTUBE_API_KEY = 'AIzaSyDkT74UC9iq4pFcCvXqTzPgAGhLT0Uo6bo';
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3/search';
 const REST_COUNTRIES_API_URL = 'https://restcountries.com/v3.1/all'; // URL to fetch all countries
+const [videoResults, setVideoResults] = useState([]);
 const fetchCountryByName = async (countryName) => {
 setLoadingCountry(true);
 try {
@@ -56,34 +56,44 @@ useEffect(() => {
 fetchRandomCountry(); // Fetch a random country when the component mounts
 }, []);
 const handleSearch = () => {
-if (!query) {
-setError('Please enter a search term');
-return;
-}
-setError(null);
-const searchUrl = `${YOUTUBE_API_URL}?part=snippet&q=${encodeURIComponent(query)}&key=${YOUTUBE_API_KEY}&type=video`;
-fetch(searchUrl)
-.then((response) => {
-if (!response.ok) {
-throw new Error('Network response was not ok');
-}
-return response.json();
-})
-.then((data) => {
-if (data.items.length > 0) {
-const videoId = data.items[0].id.videoId;
-setSelectedVideoId(videoId);
-} else {
-setSelectedVideoId(null);
-setError('No videos found');
-}
-})
-.catch((error) => {
-console.error('Error fetching YouTube data:', error);
-setError('Failed to fetch data from YouTube');
-setSelectedVideoId(null);
-});
+  if (!query) {
+    setError('Please enter a search term');
+    return;
+  }
+
+  setError(null);
+
+  const searchUrl = `${YOUTUBE_API_URL}?part=snippet&q=${encodeURIComponent(query)}&key=${YOUTUBE_API_KEY}&type=video&maxResults=3`;
+
+  fetch(searchUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.items.length > 0) {
+        const videoResults = data.items.map((item) => ({
+          videoId: item.id.videoId,
+          title: item.snippet.title,
+          channelTitle: item.snippet.channelTitle,
+          publishDate: item.snippet.publishedAt,
+        }));
+        setVideoResults(videoResults); // Store all video data
+      } else {
+        setVideoResults([]); // Clear previous results if no videos found
+        setError('No videos found');
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching YouTube data:', error);
+      setError('Failed to fetch data from YouTube');
+      setVideoResults([]); // Clear videos in case of error
+    });
 };
+
+
 // Carousel Scrolling logic
 const scrollCarousel = (direction) => {
 const container = document.getElementById('api-carousel-container');
@@ -184,7 +194,7 @@ return (
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
          <IconButton onClick={() =>
             scrollCarousel('left')}>
-            <ArrowBack />
+            <ArrowBack sx={{ fontSize: '3rem' }} />
          </IconButton>
          <Box
          id="api-carousel-container"
@@ -229,12 +239,12 @@ return (
       fontFamily: 'Roboto, sans-serif', // Consistent font family
       maxWidth: '600px', // Set a max width for better text layout
       margin: '0 auto', // Center align the text block
-      padding: '0 16px', // Add padding for better spacing on smaller screens
+      padding: ' 10px', // Add padding for better spacing on smaller screens
       }}
       >
-      This API integrates with the YouTube Data API to effortlessly fetch videos from YouTube. Simply enter your search query in the search bar, and the first result will be automatically played for you.
+        This API seamlessly integrates with the YouTube Data API, allowing you to easily retrieve videos from YouTube. Just enter your search query in the search bar, and you’ll receive the top three relevant results instantly!
       </Typography>
-      <Box mb={2} display="flex" justifyContent="center">
+      {/*<Box mb={2} display="flex" justifyContent="center">
          <iframe
             width="560"
             height="315"
@@ -244,7 +254,7 @@ return (
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             ></iframe>
-      </Box>
+      </Box>*/}
       <Box display="flex" justifyContent="center" mb={2}>
          <TextField
             variant="outlined"
@@ -267,19 +277,32 @@ return (
          {error}
       </Typography>
       )}
-      {selectedVideoId && (
-      <Box display="flex" justifyContent="center" mb={2}>
-         <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${selectedVideoId}?`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            ></iframe>
+      {videoResults.length > 0 && (
+  <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" mb={2}>
+    {videoResults.map((video, index) => (
+      <Box key={index} mb={4} sx={{ width: '100%', maxWidth: '600px' }}>
+        <iframe
+          width="100%"
+          height="315"
+          src={`https://www.youtube.com/embed/${video.videoId}`}
+          title={video.title}
+          frameBorder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <Typography variant="h6" align="center" sx={{ fontFamily: 'Roboto, sans-serif', marginTop: '10px', color: '#3f51b5' }}>
+          {video.title}
+        </Typography>
+        <Typography variant="body2" align="center" sx={{ fontFamily: 'Roboto, sans-serif', color: '#757575' }}>
+          Channel: {video.channelTitle}
+        </Typography>
+        <Typography variant="body2" align="center" sx={{ fontFamily: 'Roboto, sans-serif', color: '#757575' }}>
+          Published on: {new Date(video.publishDate).toLocaleDateString()}
+        </Typography>
       </Box>
-      )}
+    ))}
+  </Box>
+)}
       </Box>
       <Box sx={{ minWidth: '100%', scrollSnapAlign: 'start' }}>
       {/* OpenStreetMap Section */}
@@ -458,7 +481,7 @@ return (
       </Box>
       <IconButton onClick={() =>
          scrollCarousel('right')}>
-         <ArrowForward />
+         <ArrowForward sx={{ fontSize: '3rem' }} />
       </IconButton>
       </Box>
    </Container>
