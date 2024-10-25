@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-function Navbar({ youtubeApiRef }) {
+function Navbar({ youtubeApiRef, aboutRef }) {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedButton, setSelectedButton] = useState(null);
@@ -32,12 +32,25 @@ function Navbar({ youtubeApiRef }) {
     }
   };
 
+  const scrollToAboutSection = () => {
+    if (aboutRef && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleServicesApiClick = () => {
     handleGoHome(); // Navigate to home
     // Use a timeout to ensure the navigation happens before scrolling
     setTimeout(() => {
       scrollToYoutubeApiSection();
     }, 100); // Adjust the timeout duration if necessary
+  };
+
+  const handleAboutClick = () => {
+    handleGoHome(); // Navigate to home
+    setTimeout(() => {
+      scrollToAboutSection(); // Scroll to "About Me" section
+    }, 100); // Adjust the timeout if necessary
   };
 
   return (
@@ -59,18 +72,9 @@ function Navbar({ youtubeApiRef }) {
           <Button color="inherit" onClick={handleServicesApiClick}>
             Services API
           </Button>
-          {selectedButton === 'youtube' && (
-            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-              <MenuItem onClick={() => handleNavigate('/youtube')}>Services API</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Source Code</MenuItem>
-            </Menu>
-          )}
-          {selectedButton === 'about' && (
-            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-              <MenuItem onClick={handleMenuClose}>About</MenuItem>
-              <MenuItem onClick={handleMenuClose}>Life and Interests</MenuItem>
-            </Menu>
-          )}
+          <Button color="inherit" onClick={handleAboutClick}>
+            About Me
+          </Button>
         </div>
       </Toolbar>
     </AppBar>

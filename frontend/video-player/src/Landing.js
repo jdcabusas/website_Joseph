@@ -463,17 +463,26 @@ return (
       </Box>
    </Container>
    </Box>
-   {/* About Section */}
-   {/*<Box ref={aboutRef} sx={{ padding: '100px 0', backgroundColor: '#f0f0f0' }}>
-   <Container>
-      <Typography variant="h4" align="center" gutterBottom>
-         About
+   <Box ref={aboutRef}> {/* About Section */} </Box>
+<Grid container spacing={4}>
+  <Grid item xs={12}>
+    <Paper elevation={3} sx={{ padding: '40px', backgroundColor: '#fff', borderRadius: '10px', marginBottom: '40px' }}>
+      <Typography variant="h4" align="center" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold', marginBottom: '20px' }}>
+        About Me
       </Typography>
-      <Typography variant="body1" align="center">
-         This project showcases the integration of various APIs for practical use cases.
+      <Typography variant="body1" align="center" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a', marginBottom: '20px' }}>
+        Joseph Cabusas is a software engineer from the USA with a rich multicultural background. Having spent part of his childhood in Venezuela and eight years in the Philippines, where he attended university, he brings diverse life experiences to his work.
       </Typography>
-   </Container>
-   </Box>*/}
+      <Typography variant="body1" align="center" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a', marginBottom: '20px' }}>
+        A devoted husband, Joseph enjoys martial arts, playing guitar, singing, and spending time with his brothers.
+      </Typography>
+      <Typography variant="body1" align="center" sx={{ fontFamily: 'Roboto, sans-serif', color: '#546e7a' }}>
+        Driven by his faith in Jesus Christ, Joseph’s dedication to his family, career, and personal projects reflects his passion for excellence and service in all he does.
+      </Typography>
+    </Paper>
+  </Grid>
+</Grid>
+
 </div>
 );
 }
