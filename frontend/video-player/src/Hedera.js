@@ -43,7 +43,7 @@ const Resume = () => {
     }
 
     try {
-      const response = await axios.get(`https://hedera-api-sh2l.onrender.com/${route}`, {
+      const response = await axios.get(`https://hedera-api-29pz.onrender.com/${route}`, {
         params: {
           memo: route === 'create_topic' ? input : undefined,
           event_message: route === 'send_event' ? input.eventMessage : undefined,
@@ -78,7 +78,7 @@ const Resume = () => {
           <Typography variant="body1" sx={{ color: '#455a64', textAlign: 'center', marginBottom: '40px' }}>
             This API provides direct interaction with the Hedera Blockchain on the testnet, allowing users to create topics (identified by unique topic IDs), post events to these topics, retrieve past events for a specific topic, and view a full list of created topics. Users can verify all API inputs and interactions on the Hedera IO dashboard by visiting <a href="https://hashscan.io/testnet/dashboard" target="_blank" rel="noopener noreferrer">Hashscan</a>. Simply enter a topic ID in the search bar at Hashscan to view the complete event ledger associated with that topic.
             <br /><br />
-            <strong>Note:</strong> The backend Flask application that interfaces with the Hedera Blockchain runs on Render's free tier, which may take approximately 50 seconds to boot up if inactive. Please click on "GET LIST OF TOPICS BY ID" and wait for the response to use the application.
+            <strong>Note:</strong> The backend Flask application that interfaces with the Hedera Blockchain os hosted on Render's free tier service and deployed via Docker containers, which may take approximately 50 seconds to boot up if inactive. Please click on "GET LIST OF TOPICS BY ID" and wait for the response to use the application.
           </Typography>
 
           <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
@@ -124,6 +124,19 @@ const Resume = () => {
               </Typography>
             </Box>
           )}
+
+          <Box display="flex" justifyContent="center" mt={4}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              href="https://github.com/jdcabusas/hedera_api/tree/master"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ fontSize: '1rem', padding: '8px 16px' }}
+            >
+              Source Code
+            </Button>
+          </Box>
         </Container>
       </Box>
     </div>
