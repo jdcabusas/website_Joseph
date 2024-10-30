@@ -19,11 +19,11 @@ function Navbar({ youtubeApiRef, aboutRef }) {
 
   const handleNavigate = (path) => {
     handleMenuClose();
-    navigate(path); // Use navigate to change routes
+    navigate(path);
   };
 
   const handleGoHome = () => {
-    navigate('/'); // Navigate to the root route (App.js)
+    navigate('/');
   };
 
   const scrollToYoutubeApiSection = () => {
@@ -39,18 +39,21 @@ function Navbar({ youtubeApiRef, aboutRef }) {
   };
 
   const handleServicesApiClick = () => {
-    handleGoHome(); // Navigate to home
-    // Use a timeout to ensure the navigation happens before scrolling
+    handleGoHome();
     setTimeout(() => {
       scrollToYoutubeApiSection();
-    }, 100); // Adjust the timeout duration if necessary
+    }, 100);
   };
 
   const handleAboutClick = () => {
-    handleGoHome(); // Navigate to home
+    handleGoHome();
     setTimeout(() => {
-      scrollToAboutSection(); // Scroll to "About Me" section
-    }, 100); // Adjust the timeout if necessary
+      scrollToAboutSection();
+    }, 100);
+  };
+
+  const handleHederaApiClick = () => {
+    handleNavigate('/hedera'); // Navigate to the Hedera.js route
   };
 
   return (
@@ -74,6 +77,9 @@ function Navbar({ youtubeApiRef, aboutRef }) {
           </Button>
           <Button color="inherit" onClick={handleAboutClick}>
             About Me
+          </Button>
+          <Button color="inherit" onClick={handleHederaApiClick}>
+            Hedera Blockchain API
           </Button>
         </div>
       </Toolbar>

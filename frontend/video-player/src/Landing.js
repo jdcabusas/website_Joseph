@@ -16,6 +16,7 @@ const [selectedVideoId, setSelectedVideoId] = useState(null);
 const [error, setError] = useState(null);
 const [randomCountry, setRandomCountry] = useState(null);
 const [loadingCountry, setLoadingCountry] = useState(true);
+//const YOUTUBE_API_KEY = 'AIzaSyDkT74UC9iq4pFcCvXqTzPgAGhLT0Uo6bo';
 const YOUTUBE_API_KEY = 'AIzaSyDkT74UC9iq4pFcCvXqTzPgAGhLT0Uo6bo';
 const YOUTUBE_API_URL = 'https://www.googleapis.com/youtube/v3/search';
 const REST_COUNTRIES_API_URL = 'https://restcountries.com/v3.1/all'; // URL to fetch all countries
