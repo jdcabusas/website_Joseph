@@ -56,6 +56,8 @@ const Resume = () => {
           </Typography>
           <Typography variant="body1" sx={{ color: '#455a64', textAlign: 'center', marginBottom: '40px' }}>
             This API provides direct interaction with the Hedera Blockchain on the testnet, allowing users to create topics (identified by unique topic IDs), post events to these topics, retrieve past events for a specific topic, and view a full list of created topics. Users can verify all API inputs and interactions on the Hedera IO dashboard by visiting <a href="https://hashscan.io/testnet/dashboard" target="_blank" rel="noopener noreferrer">Hashscan</a>. Simply enter a topic ID in the search bar at Hashscan to view the complete event ledger associated with that topic.
+            <br /><br />
+            <strong>Note:</strong> The backend Flask application that interfaces with the Hedera Blockchain runs on Render's free tier, which may take approximately 50 seconds to boot up if inactive. Please click on "GET LIST OF TOPICS BY IgD" and wait for the response to use the application.
           </Typography>
 
           <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
@@ -69,7 +71,7 @@ const Resume = () => {
               Get Topic Events
             </Button>
             <Button variant="contained" color="primary" onClick={() => handleRequest('get_topic_ids')} sx={{ padding: '10px 20px', fontSize: '1.2rem', marginTop: '20px' }}>
-              Get Topic IDs
+              Get List Of Topics By ID
             </Button>
           </Box>
 
