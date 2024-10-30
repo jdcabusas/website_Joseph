@@ -1,13 +1,31 @@
 import { Box, Button, Container, Typography } from '@mui/material';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 
 const Resume = () => {
   const [topics, setTopics] = useState([]);
   const [responseMessage, setResponseMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [countdown, setCountdown] = useState(50);
+
+  useEffect(() => {
+    let timer;
+    if (loading && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+    } else if (countdown <= 0) {
+      setLoading(false);
+    }
+    return () => clearInterval(timer);
+  }, [loading, countdown]);
 
   const handleRequest = async (route) => {
+    setLoading(true);
+    setCountdown(50);
+    setResponseMessage('');
+
     let input = '';
     if (route === 'create_topic') {
       input = prompt('Enter topic memo:');
@@ -16,6 +34,7 @@ const Resume = () => {
       const topicId = prompt('Enter topic ID:');
       if (!eventMessage || !topicId) {
         alert('Please provide both an event message and a topic ID.');
+        setLoading(false);
         return;
       }
       input = { eventMessage, topicId };
@@ -43,6 +62,8 @@ const Resume = () => {
     } catch (error) {
       console.error(`Error fetching from ${route}:`, error);
       setResponseMessage(`Error fetching from ${route}: ${error.message}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,6 +95,14 @@ const Resume = () => {
               Get List Of Topics By ID
             </Button>
           </Box>
+
+          {loading && (
+            <Box sx={{ marginTop: '20px', padding: '10px', backgroundColor: '#ffffff', borderRadius: '5px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', textAlign: 'center' }}>
+              <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238' }}>
+                Waiting for response... Please wait {countdown} seconds
+              </Typography>
+            </Box>
+          )}
 
           {topics.length > 0 && (
             <Box sx={{ marginTop: '20px', padding: '10px', backgroundColor: '#ffffff', borderRadius: '5px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
