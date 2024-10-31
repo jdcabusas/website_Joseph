@@ -1,29 +1,15 @@
-import { Box, Button, Container, Typography } from '@mui/material';
+import { Box, Button, Container, Typography, CircularProgress } from '@mui/material';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Navbar from './Navbar';
 
 const Resume = () => {
   const [topics, setTopics] = useState([]);
   const [responseMessage, setResponseMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [countdown, setCountdown] = useState(50);
-
-  useEffect(() => {
-    let timer;
-    if (loading && countdown > 0) {
-      timer = setInterval(() => {
-        setCountdown((prev) => prev - 1);
-      }, 1000);
-    } else if (countdown <= 0) {
-      setLoading(false);
-    }
-    return () => clearInterval(timer);
-  }, [loading, countdown]);
 
   const handleRequest = async (route) => {
     setLoading(true);
-    setCountdown(50);
     setResponseMessage('');
 
     let input = '';
@@ -78,7 +64,7 @@ const Resume = () => {
           <Typography variant="body1" sx={{ color: '#455a64', textAlign: 'center', marginBottom: '40px' }}>
             This API provides direct interaction with the Hedera Blockchain on the testnet, allowing users to create topics (identified by unique topic IDs), post events to these topics, retrieve past events for a specific topic, and view a full list of created topics. Users can verify all API inputs and interactions on the Hedera IO dashboard by visiting <a href="https://hashscan.io/testnet/dashboard" target="_blank" rel="noopener noreferrer">Hashscan</a>. Simply enter a topic ID in the search bar at Hashscan to view the complete event ledger associated with that topic.
             <br /><br />
-            <strong>Note:</strong> The backend Flask application that interfaces with the Hedera Blockchain os hosted on Render's free tier service and deployed via Docker containers, which may take approximately 50 seconds to boot up if inactive. Please click on "GET LIST OF TOPICS BY ID" and wait for the response to use the application.
+            <strong>Note:</strong> The backend Flask application that interfaces with the Hedera Blockchain is hosted on Render's free tier service and deployed via Docker containers, which may take approximately 50 seconds to boot up if inactive. Please click on "GET LIST OF TOPICS BY ID" and wait for the response to use the application.
           </Typography>
 
           <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
@@ -98,8 +84,9 @@ const Resume = () => {
 
           {loading && (
             <Box sx={{ marginTop: '20px', padding: '10px', backgroundColor: '#ffffff', borderRadius: '5px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-              <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238' }}>
-                Waiting for response... Please wait {countdown} seconds
+              <CircularProgress color="primary" />
+              <Typography variant="h6" sx={{ fontFamily: 'Roboto, sans-serif', color: '#263238', marginTop: '10px' }}>
+                Waiting for a response... This may take up to 50 seconds if the backend is inactive.
               </Typography>
             </Box>
           )}
