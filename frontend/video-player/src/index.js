@@ -6,6 +6,7 @@ import YoutubeSearch from './YoutubeSearch'; // Import your YoutubeSearch compon
 import Career from './Career'; // Import your Career component
 import Resume from './Resume'; // Import your Resume component
 import Hedera from './Hedera'
+import TextSummarizer from './TextSummarizer'
 //import App from './App'; // Import the App component
 import Landing from './Landing'; // Import the App component
 
@@ -19,6 +20,7 @@ root.render(
         <Route path="/career" element={<Career />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/hedera" element={<Hedera />} />
+        <Route path="/text-summarizer" element={<TextSummarizer />} />
       </Routes>
     </Router>
   </React.StrictMode>
