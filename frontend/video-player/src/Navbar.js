@@ -64,6 +64,10 @@ function Navbar({ youtubeApiRef, aboutRef }) {
     handleNavigate('/text-summarizer'); // Navigate to the Text Summarizer route
   };
 
+  const handleVoiceToTextClick = () => {
+    handleNavigate('/voicetotext'); // Navigate to the AI Voice to Text route
+  };
+
   return (
     <AppBar position="static" sx={{ backgroundColor: '#333' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -91,6 +95,7 @@ function Navbar({ youtubeApiRef, aboutRef }) {
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl) && selectedButton === 'blockchain'} onClose={handleMenuClose}>
             <MenuItem onClick={handleHederaApiClick}>Hedera Blockchain API</MenuItem>
             <MenuItem onClick={handleAIApiClick}>AI Text Summarizer</MenuItem>
+            <MenuItem onClick={handleVoiceToTextClick}>AI Voice to Text</MenuItem> {/* New menu item added */}
           </Menu>
 
           {/* Move About Me button to the end */}
