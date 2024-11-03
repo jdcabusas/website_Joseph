@@ -52,7 +52,7 @@ const Recorder = () => {
     setIsLoading(true); // Set loading to true when transcription starts
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/transcribe', {
+      const response = await fetch('https://hedera-api-29pz.onrender.com/transcribe', {
         method: 'POST',
         body: formData,
       });
