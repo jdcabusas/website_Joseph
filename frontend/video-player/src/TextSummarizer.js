@@ -33,7 +33,7 @@ const TextSummarizer = () => {
       <Box sx={{ padding: '50px 0', backgroundColor: '#eceff1' }}>
         <Container>
           <Typography variant="h2" sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold', color: '#263238', textAlign: 'center', marginBottom: '20px' }}>
-            Text Summarizer
+            AI Text Summarizer
           </Typography>
 
           {/* Add the description here */}

@@ -57,15 +57,19 @@ function Navbar({ youtubeApiRef, aboutRef }) {
   };
 
   const handleHederaApiClick = () => {
-    handleNavigate('/hedera'); // Navigate to the Hedera.js route
+    handleNavigate('/hedera');
   };
 
   const handleAIApiClick = () => {
-    handleNavigate('/text-summarizer'); // Navigate to the Text Summarizer route
+    handleNavigate('/text-summarizer');
   };
 
   const handleVoiceToTextClick = () => {
-    handleNavigate('/voicetotext'); // Navigate to the AI Voice to Text route
+    handleNavigate('/voicetotext');
+  };
+
+  const handleImageGeneratorClick = () => {
+    handleNavigate('/image-generator'); // New route for AI Image Generator
   };
 
   return (
@@ -95,10 +99,10 @@ function Navbar({ youtubeApiRef, aboutRef }) {
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl) && selectedButton === 'blockchain'} onClose={handleMenuClose}>
             <MenuItem onClick={handleHederaApiClick}>Hedera Blockchain API</MenuItem>
             <MenuItem onClick={handleAIApiClick}>AI Text Summarizer</MenuItem>
-            <MenuItem onClick={handleVoiceToTextClick}>AI Voice to Text</MenuItem> {/* New menu item added */}
+            <MenuItem onClick={handleVoiceToTextClick}>AI Voice to Text</MenuItem>
+            <MenuItem onClick={handleImageGeneratorClick}>AI Image Generator</MenuItem> {/* New item added */}
           </Menu>
 
-          {/* Move About Me button to the end */}
           <Button color="inherit" onClick={handleAboutClick}>
             About Me
           </Button>

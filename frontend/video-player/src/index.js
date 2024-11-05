@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Im
 import YoutubeSearch from './YoutubeSearch'; // Import your YoutubeSearch component
 import Career from './Career'; // Import your Career component
 import Resume from './Resume'; // Import your Resume component
+import ImageGenerator from './ImageGenerator'; // Import your Resume component
 import Recorder from './Recorder'; // Import your Resume component
 import Hedera from './Hedera'
 import TextSummarizer from './TextSummarizer'
@@ -23,6 +24,7 @@ root.render(
         <Route path="/hedera" element={<Hedera />} />
         <Route path="/text-summarizer" element={<TextSummarizer />} />
         <Route path="/voicetotext" element={<Recorder />} />
+         <Route path="/image-generator" element={<ImageGenerator />} />
       </Routes>
     </Router>
   </React.StrictMode>
