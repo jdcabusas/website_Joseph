@@ -29,7 +29,7 @@ const ImageGenerator = () => {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:5000/generate-image',
+        'https://hedera-api-29pz.onrender.com/generate-image',
         { input_string: inputString },
         { responseType: 'arraybuffer' } // Expecting an array buffer for the image
       );
