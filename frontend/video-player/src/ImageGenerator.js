@@ -95,6 +95,12 @@ const ImageGenerator = () => {
           AI Image Generator
         </Typography>
 
+        <Typography variant="body1" sx={{ color: '#455a64', textAlign: 'center', marginBottom: '20px' }}>
+            This tool allows users to generate images using the Black Forest Labs FLUX AI Model, with a limit of three image generations per user per day. The model processes each request to produce AI-generated visuals, intended for applications requiring high-quality, algorithm-driven images.
+            <br /><br />
+            <strong>Note:</strong> The backend Flask application that runs the AI model is hosted on Render's free tier service and deployed via Docker containers, which may take approximately 50 seconds to boot up if inactive. This tool on initial boot up will take significant time to generate the first image due to backend boot up followed by image generation.
+          </Typography>
+
         <TextField
           variant="outlined"
           fullWidth
